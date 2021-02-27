@@ -8,33 +8,34 @@ const breakPoints = [
     { width: 550, itemsToShow: 2 },
     { width: 768, itemsToShow: 3 },
     { width: 1200, itemsToShow: 4 },
-  ];
+    { width: 1500, itemsToShow: 5 },
+];
 function Slider() {
     return (
         <div>
             <h1>Daily Deals - Carousel</h1>
             <Carousel className="carousel_list" breakPoints={breakPoints}>
-                    <div>
+                    <div className="slider_items">
                         <img src="https://i.ebayimg.com/images/g/bvYAAOSwiglfqUSv/s-l225.webp" alt=""/>
                         <p>$30.65</p>
                     </div>
-                    <div>
+                    <div className="slider_items"> 
                         <img src="https://i.ebayimg.com/images/g/MLcAAOSw26tgHBi-/s-l225.webp" alt=""/>
                         <p>$30.65</p>
                     </div>
-                    <div>
+                    <div className="slider_items">
                         <img src="https://i.ebayimg.com/images/g/NwEAAOSwa81gAQlP/s-l225.jpg" alt=""/>
                         <p>$30.65</p>
                     </div>
-                    <div>
+                    <div className="slider_items">
                         <img src="https://i.ebayimg.com/images/g/JPsAAOSwyFBf789R/s-l225.jpg" alt=""/>
                         <p>$30.65</p>
                     </div>
-                    <div>
+                    <div className="slider_items">
                         <img src="https://i.ebayimg.com/images/g/awMAAOSwJm9cmpRY/s-l225.jpg" alt=""/>
                         <p>$30.65</p>
                     </div>
-                    <div>
+                    <div className="slider_items">
                         <img src="https://i.ebayimg.com/images/g/HDMAAOSwnPBgAQnU/s-l225.jpg" alt=""/>
                         <p>$30.65</p>
                     </div>    

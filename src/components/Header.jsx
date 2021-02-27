@@ -37,10 +37,10 @@ function Header() {
                     <div className="header_search">
                         <input type="text" className="header_searchInput"/>
                         <select className="header_searchSelect" name="cars" id="cars">
-                            <option value="volvo">All Categories</option>
-                            <option value="saab">Art</option>
-                            <option value="mercedes">Book</option>
-                            <option value="audi">Baby</option>
+                            <option value="All">All Categories</option>
+                            <option value="Art">Art</option>
+                            <option value="Book">Book</option>
+                            <option value="Baby">Baby</option>
                         </select>
                     </div>
                     <button className="search_button">

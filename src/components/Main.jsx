@@ -1,30 +1,45 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import './css/Main.css'
+import Menu from './img/menu_icon.png'
+import Close from './img/close_icon.png'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Slider from './Slider';
 
 export class Main extends Component {
+
+    state = {
+        toggle: false
+    }
+
+    menuToggle = () =>{
+        this.setState({toggle: !this.state.toggle})
+    }
+
     render(){
+        const {toggle} = this.state;
         return (
             <div className="main_content">
-                <div className="list">
-                    <ul>
-                        <li><Link>Home</Link></li>
-                        <li><Link>Saved</Link></li>
-                        <li><Link>Electronics</Link></li>
-                        <li><Link>Fashion</Link></li>
-                        <li><Link>Health & Beauty</Link></li>
-                        <li><Link>Motors</Link></li>
-                        <li><Link>Collectibles</Link></li>
-                        <li><Link>Sports</Link></li>
-                        <li><Link>Home & Garden</Link></li>
-                        <li><Link>Deals</Link></li>
-                        <li><Link>Under $10</Link></li>
-                    </ul>
+                <div className="menu" onClick={this.menuToggle}>
+                    <img src={Menu} alt="" width="20"/>
                 </div>
-                <Carousel>
+                <nav>
+                    <ul id="main_ul" className={toggle ? "toggle" : ""}>
+                        <li><Link>Home</Link></li>
+                        <li><Link to="/Saved">Saved</Link></li>
+                        <li><Link to="/Electronics">Electronics</Link></li>
+                        <li><Link to="/Fashion">Fashion</Link></li>
+                        <li><Link to="/Health">Health & Beauty</Link></li>
+                        <li><Link to="/Motors">Motors</Link></li>
+                        <li><Link to="/Saved">Collectibles</Link></li>
+                        <li><Link to="/Saved">Sports</Link></li>
+                        <li className="close" onClick={this.menuToggle}>
+                                <img src={Close} alt="" width="20"/>
+                        </li>
+                    </ul>
+                </nav>
+                <Carousel className="carousel_images">
                     <div>
                         <img src="https://i.ebayimg.com/images/g/7lcAAOSwM4heTPGu/s-l960.webp" />
                         <p className="legend">Shop Items from Japanese Sellers</p>
@@ -69,7 +84,7 @@ export class Main extends Component {
                                 <h3>Sneakers</h3>
                             </Link>
                         </li>
-                        <li>
+                        <li> 
                             <Link className="popular_link">
                                 <div className="popular_listImage">
                                     <img src="https://i.ebayimg.com/images/g/JVwAAOSw5c5f4xc6/s-l200.webp" alt=""/>
